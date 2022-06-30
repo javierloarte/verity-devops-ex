@@ -60,9 +60,12 @@ pipeline {
 
 	//COde start for stage Code Coverage
 	stage('Code Coverage'){
-		Step([
-			$clase: 'JacocoPublisher'
+	steps {
+		//Generate coverage report
+		step([
+			$class: 'JacocoPublisher'
 		])
+	      }
 	}
 	//Code ends for stage code coverage
 
