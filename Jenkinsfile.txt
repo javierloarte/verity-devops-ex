@@ -59,14 +59,14 @@ pipeline {
 	
 
 	//COde start for stage Code Coverage
-	stage('Code Coverage'){
-	steps {
+//	stage('Code Coverage'){
+//	steps {
 		//Generate coverage report
-		step([
-			$class: 'JacocoPublisher'
-		])
-	      }
-	}
+//		step([
+//			$class: 'JacocoPublisher'
+//		])
+//	      }
+//	}
 	//Code ends for stage code coverage
 
 
@@ -117,8 +117,8 @@ pipeline {
 	//Code starts for stage System Test
 	stage('System Test') {
             steps {
-				//Change git url below as per your forked github repository URL
-				git url: 'https://github.com/javierloarte/EMSystemTests-ex.git'
+		//Change git url below as per your forked github repository URL
+		git url: 'https://github.com/javierloarte/EMSystemTests-ex.git'
             	sh 'mvn -Dtest=ExpenseManagerSystemTest test'
             }
         }
